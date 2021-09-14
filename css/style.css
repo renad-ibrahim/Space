@@ -1,0 +1,371 @@
+/* start  golbal rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font: font-family: 'Work Sans', sans-serif;
+}
+:root{
+    --main-color: #3b6d94;
+}
+.container{
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ***** small ***** */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+/* ***** Medium ***** */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* ***** Large ***** */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* end global rules */
+
+/* start components */
+.special-heading{
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px; /* l msafa been l letters */
+    margin: 0;
+}
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+
+/* end components */
+/* *************************************************** Satrt header *************************************************** */
+.header .container{
+    display: flex;                  /* 3wza l distance between logo and icon a3mlha b flix f lazem l parent eli 4ayel l header yb2a display flix */
+    justify-content: space-between; /* 3wza l distance between logo and icon a3mlha b flix f lazem l parent eli 4ayel l header yb2a display flix */
+    align-items: center;            /* 3wza l distance between logo and icon a3mlha b flix f lazem l parent eli 4ayel l header yb2a display flix */
+}
+.header .logo{
+    width: 35px;
+    height: 35px;
+}
+.header .links .icon{
+    font-size: 23px;
+    color: #3b6d94;
+}
+.header .links{
+    position: relative;
+}
+
+.header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: -8px;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1; /* 34an tegi foo2 l elements */
+}
+
+.header .links ul li{
+    padding-right: 20px;
+}
+
+.header .links ul li a{
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    color: #333;
+    transition: 0.6s;
+}
+.header .links ul li a:hover{
+    padding-left: 25px;
+    color: red;
+}
+
+.header .links:hover ul{
+    display: block;
+    
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+
+/* ***** 34an a3ml arrow mn l ul ***** */
+.header .links ul::before{
+    content: " ";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+/* *************************************************** END header *************************************************** */
+/* *************************************************** Start Landing *************************************************** */
+.landing {
+    background-image: url('../images/NASA%20.jpg');
+    background-size: cover;
+    height: calc(100vh - 64px);
+}
+.landing .intro-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50% , -50%);
+    max-width: 100%;
+    color: white;
+    transition: 0.9s;
+}
+.landing .intro-text h3{
+    font-size: 50px;
+    text-align: center;
+    margin: 0px;
+    line-height: 2;
+}
+.landing .intro-text p{
+    font-size: 30px;
+    text-align: center;
+    margin: 0px;
+    line-height: 2;
+}
+
+/* *************************************************** END Landing *************************************************** */
+/* *************************************************** start featurres *************************************************** */
+.features{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+}
+.features .title{
+    text-align: center;
+    padding-bottom: 45px;
+    padding-top: 45px;
+    color: var(--main-color);
+}
+.features .feat img{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+}
+.features .feat img:hover{
+    width: 180px;
+    height: 180px;
+    transition: 0.6s;
+    border-radius:50%;
+}
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i{
+    font-size: 40px;
+}
+.faetures .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+.features .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+/* *************************************************** END features *************************************************** */
+/* *************************************************** start services *************************************************** */
+.services{
+   padding-top: 60px;
+    padding-bottom: 60px; 
+}
+.services p {
+    line-height: 1.8;
+    font-size: 20px;
+}
+.services img{
+    width: 100%;
+}
+/*.services .image img{
+    width: 100px;
+    height: 180px;
+}
+.services .services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill  , minmax(300px , 1fr));
+    margin-top: 100px;
+}
+
+@media (max-width:767px){
+    .services .services-content .srv{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+    .services .services-content .srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.services .services-content .srv i{
+        color: firebrick;
+        flex-basis: 60px;
+    }
+    .services .services-content .srv .text{
+        flex: 1;
+    }
+    .services .services-content .srv .text h3 {
+        margin: 0 0 20px;
+    }
+    .services .services-content .srv .text p{
+        color: #444;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+    .services .services-content .image{
+        text-align: center;
+        position: relative;
+    }
+    .services .services-content .image::before{
+            content: "";
+            background-color: aqua;
+            width: 87px;
+            height: 90%;
+            top: -50px;
+            position: absolute;
+            right: 20px;
+            z-index: -1;
+    }
+    .services .services-content .image img{
+        width: 260px;
+    }
+@media(max-width:1199px){
+    .services .services-content .image-col{
+        display: none;
+    }
+} */
+/* *************************************************** END services *************************************************** */
+
+/* *************************************************** Start Portfolio *************************************************** */
+.portfolio {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.portfolio p{
+    line-height: 1.8;
+    font-size: 20px;
+}
+.portfolio img{
+    width: 100%;
+}
+/*.portfolio .portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+}
+.card{
+    background-color: white;
+}
+.card img{
+    max-width: 100%;    
+}
+.card .info{
+    padding: 20px;
+}
+.card .info h3{
+    font-weight: 300;
+    margin: 0px;
+}
+.card .info p{
+    line-height: 1.6;
+    color: #777;
+}*/
+/* *************************************************** END Portfolio *************************************************** */
+
+/* *************************************************** start about *************************************************** */
+.about{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.about-content{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width:991px){
+    .about-content{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about p{
+    line-height: 1.8;
+    font-size: 20px;
+}
+.about p span{
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* *************************************************** END about *************************************************** */
+/* *************************************************** start contac *************************************************** */
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.container{
+    text-align: center;
+}
+.contact i{
+    font-size: 30px;
+}
+.contact i:first-of-type{
+    color: #1da1f2;
+}
+.contact i:nth-of-type(2){
+    color: #2d88ff;
+}
+.contact i:last-of-type{
+    color: crimson;
+}
+/* *************************************************** END contact *************************************************** */
+
+/* *************************************************** Start footer *************************************************** */
+.footer{
+    background-color: #333;
+    color: white;
+    padding: 30px 10px;
+     text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.footer span{
+    font-weight: bold;
+    color: var(--main-color);
+}
